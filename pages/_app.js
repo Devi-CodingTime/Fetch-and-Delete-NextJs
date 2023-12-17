@@ -8,9 +8,18 @@ export default function App({ Component, pageProps }) {
 
   const API = "https://content.newtonschool.co/v1/pr/63b70222af4f30335b4b3b9a/buses"
 
+  async function getData()
+  {
+    let res = await fetch(API);
+    let result = await res.json();
+    setData(result);
+  }
+  useEffect(()=>{
+    getData();
+  },[]);
 
   const contextValue = {
-
+    data,setData,msg,setMsg
   };
 
   return (
