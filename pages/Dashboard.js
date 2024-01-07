@@ -8,9 +8,12 @@ function Dashboard() {
   return (
     <div id="dashboardPage">
       <div id="message">{msg}</div>
+      {data.map((e)=>{
+        return <DataItem id={e.id} busName={e.busName} source={e.source} ticketPrice={e.ticketPrice}
+        destination={e.destination}/>
+      })}
 
-
-      <DataItem />
+      
 
 
 
