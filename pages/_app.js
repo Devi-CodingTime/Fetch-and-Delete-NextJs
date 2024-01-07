@@ -17,7 +17,14 @@ export default function App({ Component, pageProps }) {
   useEffect(()=>{
     getData();
   },[]);
-
+  useEffect(()=>{
+    if(msg==="Data Deleted")
+    {
+      setTimeout(()=>{
+        setMsg("");
+      },3000);
+    }
+  },[msg]);
   const contextValue = {
     data,setData,msg,setMsg
   };
